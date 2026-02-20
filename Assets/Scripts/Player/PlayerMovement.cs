@@ -6,7 +6,13 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody _rb;
 
     [SerializeField]
-    private float _speed;
+    private float _groundSpeed;
+
+    [SerializeField]
+    private float _spaceAcceleration;
+
+    [SerializeField]
+    private float _maxSpaceSpeed;
 
     private Vector2 _lastKnownMoveInput;
 
@@ -31,11 +37,17 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(_grounded);
         if (_grounded)
         {
-            _rb.linearVelocity = new Vector3(_lastKnownMoveInput.x * _speed, 0, _lastKnownMoveInput.y * _speed);
+            _rb.linearVelocity = new Vector3(_lastKnownMoveInput.x * _groundSpeed, 0, _lastKnownMoveInput.y * _groundSpeed);
         }
-        
+        else
+        {
+            _rb.linearVelocity += new Vector3(
+                _lastKnownMoveInput.x * _spaceAcceleration * Time.deltaTime, 
+                0, 
+                _lastKnownMoveInput.y * _spaceAcceleration * Time.deltaTime);
+            _rb.linearVelocity = Vector3.ClampMagnitude(_rb.linearVelocity, _maxSpaceSpeed);
+        }
     }
 }
