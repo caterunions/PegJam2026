@@ -9,6 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8433244220362175462}
+  - component: {fileID: 8134661743711011004}
+  - component: {fileID: 7224598050493453180}
   m_Layer: 0
   m_Name: Goblin
   m_TagString: Untagged
@@ -32,6 +34,41 @@ Transform:
   - {fileID: 8445162516981429246}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!195 &8134661743711011004
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3320506403864445347}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.2
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 300
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 1
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &7224598050493453180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3320506403864445347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627c9813a0dc51a41a6b8ce50fcef89f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RandomWander
+  agent: {fileID: 8134661743711011004}
 --- !u!1001 &8266788046911984661
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -58,22 +95,22 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 2df80d04bd3aabd409db8fb5459876c0,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.5
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2df80d04bd3aabd409db8fb5459876c0,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.5
+      value: -0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2df80d04bd3aabd409db8fb5459876c0,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2df80d04bd3aabd409db8fb5459876c0,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2df80d04bd3aabd409db8fb5459876c0,
         type: 3}
@@ -88,7 +125,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 2df80d04bd3aabd409db8fb5459876c0,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 90
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 2df80d04bd3aabd409db8fb5459876c0,
         type: 3}
