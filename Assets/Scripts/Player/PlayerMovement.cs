@@ -3,18 +3,20 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField]
-    private Rigidbody _rb;
+    private Rigidbody rb;
 
     [SerializeField]
-    private float _groundSpeed;
+    private float groundSpeed;
 
     [SerializeField]
-    private float _spaceAcceleration;
+    private float spaceAcceleration;
 
     [SerializeField]
-    private float _maxSpaceSpeed;
+    private float maxSpaceSpeed;
 
-    private Vector2 _lastKnownMoveInput;
+    private Vector2 lastKnownMoveInput;
+
+    private float angle;
 
     private bool _grounded
     {
@@ -32,22 +34,29 @@ public class PlayerMovement : MonoBehaviour
 
     public void HandleMove(Vector2 moveInput)
     {
-        _lastKnownMoveInput = moveInput;
+        lastKnownMoveInput = moveInput;
+
+        if(moveInput != Vector2.zero)
+        {
+            angle = (Mathf.Rad2Deg * Mathf.Atan2(moveInput.x, moveInput.y)) - 90;
+        }
     }
 
     private void Update()
     {
+        transform.rotation = Quaternion.AngleAxis(angle, Vector3.up);
+
         if (_grounded)
         {
-            _rb.linearVelocity = new Vector3(_lastKnownMoveInput.x * _groundSpeed, 0, _lastKnownMoveInput.y * _groundSpeed);
+            rb.linearVelocity = new Vector3(lastKnownMoveInput.x * groundSpeed, 0, lastKnownMoveInput.y * groundSpeed);
         }
         else
         {
-            _rb.linearVelocity += new Vector3(
-                _lastKnownMoveInput.x * _spaceAcceleration * Time.deltaTime, 
+            rb.linearVelocity += new Vector3(
+                lastKnownMoveInput.x * spaceAcceleration * Time.deltaTime, 
                 0, 
-                _lastKnownMoveInput.y * _spaceAcceleration * Time.deltaTime);
-            _rb.linearVelocity = Vector3.ClampMagnitude(_rb.linearVelocity, _maxSpaceSpeed);
+                lastKnownMoveInput.y * spaceAcceleration * Time.deltaTime);
+            rb.linearVelocity = Vector3.ClampMagnitude(rb.linearVelocity, maxSpaceSpeed);
         }
     }
 }

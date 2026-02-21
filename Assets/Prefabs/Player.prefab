@@ -121,10 +121,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04fbb1c7b1f273543970641f246a9466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  _rb: {fileID: 4073323866712607414}
-  _groundSpeed: 5
-  _spaceAcceleration: 4
-  _maxSpaceSpeed: 4
+  rb: {fileID: 4073323866712607414}
+  groundSpeed: 5
+  spaceAcceleration: 4
+  maxSpaceSpeed: 4
 --- !u!136 &3662922739256872458
 CapsuleCollider:
   m_ObjectHideFlags: 0
