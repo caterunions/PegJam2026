@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ShipFuel : MonoBehaviour
 {
+    //TODO add unity event for Zach that signals when to play processing sound
     [Header("Initialization")] [SerializeField]
     private float startingFuel = 10f;
 
