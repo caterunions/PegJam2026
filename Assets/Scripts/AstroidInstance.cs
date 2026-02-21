@@ -12,21 +12,15 @@ public class AstroidInstance : MonoBehaviour
     void Start()
     {
         screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
-        StartCoroutine(AsteroidWave());
+        spawnEnemy();
     }
 
     private void spawnEnemy()
     {
-        GameObject astroid = Instantiate(astroidPrefab) as GameObject;
-        astroid.transform.position = new Vector3(0, Random.Range(-screenBounds.y, screenBounds.y), screenBounds.z * -2);
-    }
-
-    IEnumerator AsteroidWave()
-    {
         while (true)
         {
-            yield return new WaitForSeconds(respawnTime);
-            spawnEnemy();
+            Instantiate(astroidPrefab);
+            astroidPrefab.transform.position = new Vector3(0, Random.Range(-screenBounds.y, screenBounds.y), screenBounds.z * -2);
         }
     }
     
