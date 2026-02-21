@@ -18,6 +18,10 @@ public class PlayerMovement : MonoBehaviour
 
     private float angle;
 
+    private bool canMove = true;
+    public void Activate() { canMove = true; }
+    public void Deactivate() { canMove = false; }
+
     private bool _grounded
     {
         get
@@ -44,6 +48,12 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        if(!canMove)
+        {
+            rb.linearVelocity = Vector3.zero;
+            return;
+        }
+
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.up);
 
         if (_grounded)
