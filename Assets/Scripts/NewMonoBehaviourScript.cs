@@ -1,10 +1,16 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class NewMonoBehaviourScript : MonoBehaviour
 {
-    public void Play()
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(1);
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
     }
 }
