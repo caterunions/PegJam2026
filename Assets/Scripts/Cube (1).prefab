@@ -12,9 +12,8 @@ GameObject:
   - component: {fileID: 562502166140034948}
   - component: {fileID: 8925229669922972502}
   - component: {fileID: 4248637973607145311}
-  - component: {fileID: 1233779366745035050}
   - component: {fileID: 2160542204671365495}
-  - component: {fileID: 338100687736083937}
+  - component: {fileID: 1401496913797323793}
   m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Untagged
@@ -115,18 +114,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1233779366745035050
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9070376365597946530}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38a2036a33d7fba489bad4dc1ff71295, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::NewMonoBehaviourScript1
 --- !u!54 &2160542204671365495
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -154,7 +141,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &338100687736083937
+--- !u!114 &1401496913797323793
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -163,8 +150,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 9070376365597946530}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be6d91a4e8ebf7b40b44190d604aee93, type: 3}
+  m_Script: {fileID: 11500000, guid: 38a2036a33d7fba489bad4dc1ff71295, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AstroidInstance
-  astroidPrefab: {fileID: 9070376365597946530}
-  respawnTime: 1
+  m_EditorClassIdentifier: Assembly-CSharp::NewMonoBehaviourScript1

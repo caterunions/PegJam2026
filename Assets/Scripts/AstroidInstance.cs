@@ -4,25 +4,21 @@ using UnityEngine;
 public class AstroidInstance : MonoBehaviour
 {
     public GameObject astroidPrefab;
-    public float respawnTime = 2.0f;
-    private Vector3 screenBounds;
+    public float spawnTimer;
+    public float spawnInterval;
 
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public void Update()
     {
-        screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
-        spawnEnemy();
-    }
-
-    private void spawnEnemy()
-    {
-        while (true)
+        spawnTimer += Time.deltaTime;
+        if (spawnTimer >= spawnInterval)
         {
-            Instantiate(astroidPrefab);
-            astroidPrefab.transform.position = new Vector3(0, Random.Range(-screenBounds.y, screenBounds.y), screenBounds.z * -2);
+            spawnTimer = 0;
+            spawnObject();
         }
     }
-    
 
+    private void spawnObject()
+    {
+        Instantiate(astroidPrefab, transform.position, transform.rotation);
+    }
 }

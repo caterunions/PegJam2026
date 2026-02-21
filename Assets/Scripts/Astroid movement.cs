@@ -7,16 +7,10 @@ public class NewMonoBehaviourScript1 : MonoBehaviour
     private Vector3 ScreenBounds;
 
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    // This is going forward in the Z x
     void Start()
     {
        rb = this.GetComponent<Rigidbody>();
         rb.linearVelocity = new Vector3(0, 0, -speed);
-    }
-
-    void Update()
-    {
-       
-   
     }
 }
