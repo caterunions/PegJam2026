@@ -47,7 +47,7 @@ public class GoblinBrain : MonoBehaviour
 
         yield return new WaitForSeconds(Random.Range(1,4));
 
-        StopCoroutine(currentTaskRoutine);
+        if (currentTaskRoutine != null) StopCoroutine(currentTaskRoutine);
         currentTaskRoutine = null;
     }
 
@@ -57,7 +57,8 @@ public class GoblinBrain : MonoBehaviour
 
         if(selectedTerminal.IsInUse)
         {
-            StopCoroutine(currentTaskRoutine);
+            if (currentTaskRoutine != null) StopCoroutine(currentTaskRoutine);
+
             currentTaskRoutine = null;
         }
 
@@ -69,18 +70,16 @@ public class GoblinBrain : MonoBehaviour
 
         if (selectedTerminal.IsInUse)
         {
-            StopCoroutine(currentTaskRoutine);
+            if (currentTaskRoutine != null) StopCoroutine(currentTaskRoutine);
+
             currentTaskRoutine = null;
         }
 
         selectedTerminal.StartInteract(player: false);
-
         animator.SetBool("Interacting", true);
-
         SceneGod.SInstance.audioSystem.PlayGoblinSound();
 
         int times = Random.Range(2, 6);
-
         for(int i = 0; i < 3; i++)
         {
             selectedTerminal.HandleInput(new Vector2(0, Random.Range(0, 2) * 2 - 1));
@@ -91,14 +90,14 @@ public class GoblinBrain : MonoBehaviour
         }
 
         selectedTerminal.HandleInput(Vector2.zero);
-
         animator.SetBool("Interacting", false);
 
         yield return new WaitForSeconds(0.5f);
 
         selectedTerminal.StopInteract(player: false);
 
-        StopCoroutine(currentTaskRoutine);
+        if (currentTaskRoutine != null) StopCoroutine(currentTaskRoutine);
+
         currentTaskRoutine = null;
     }
 
@@ -106,7 +105,8 @@ public class GoblinBrain : MonoBehaviour
     {
         if(throttleTerminal.IsInUse)
         {
-            StopCoroutine(currentTaskRoutine);
+            if (currentTaskRoutine != null) StopCoroutine(currentTaskRoutine);
+
             currentTaskRoutine = null;
         }
 
@@ -118,7 +118,8 @@ public class GoblinBrain : MonoBehaviour
 
         if (throttleTerminal.IsInUse)
         {
-            StopCoroutine(currentTaskRoutine);
+            if (currentTaskRoutine != null) StopCoroutine(currentTaskRoutine);
+
             currentTaskRoutine = null;
         }
 
@@ -140,7 +141,8 @@ public class GoblinBrain : MonoBehaviour
 
         throttleTerminal.StopInteract(player: false);
 
-        StopCoroutine(currentTaskRoutine);
+        if(currentTaskRoutine != null) StopCoroutine(currentTaskRoutine);
+
         currentTaskRoutine = null;
     }
 }
