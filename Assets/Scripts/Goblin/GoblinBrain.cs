@@ -28,11 +28,11 @@ public class GoblinBrain : MonoBehaviour
         {
             if (Random.Range(0, 5) == 0)
             {
-                currentTaskRoutine = StartCoroutine(MessWithGunTask());
-            }
-            else if (Random.Range(0, 5) == 0)
-            {
                 currentTaskRoutine = StartCoroutine(MessWithThrottleTask());
+            }
+            else if (Random.Range(0, 4) == 0)
+            {
+                currentTaskRoutine = StartCoroutine(MessWithGunTask());
             }
             else
             {
@@ -76,6 +76,8 @@ public class GoblinBrain : MonoBehaviour
         selectedTerminal.StartInteract(player: false);
 
         animator.SetBool("Interacting", true);
+
+        SceneGod.SInstance.audioSystem.PlayGoblinSound();
 
         int times = Random.Range(2, 6);
 
@@ -123,6 +125,8 @@ public class GoblinBrain : MonoBehaviour
         throttleTerminal.StartInteract(player: false);
 
         animator.SetBool("Interacting", true);
+
+        SceneGod.SInstance.audioSystem.PlayGoblinSound();
 
         throttleTerminal.HandleInput(new Vector2(0, Random.Range(0, 2) * 2 - 1));
 

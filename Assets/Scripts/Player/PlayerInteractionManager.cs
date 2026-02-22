@@ -57,6 +57,7 @@ public class PlayerInteractionManager : MonoBehaviour
 
         if(other.gameObject.CompareTag("Fuel"))
         {
+            SceneGod.SInstance.audioSystem.PlayCollectSound();
             holdingFuel = true;
             other.transform.SetParent(transform, true);
             Destroy(other.GetComponent<Rigidbody>());
