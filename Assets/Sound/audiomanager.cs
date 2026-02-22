@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class audioscriot : MonoBehaviour
+public class audioscript : MonoBehaviour
 {
-    [Header("-----audioscriot -----")]
+    [Header("-----audioscript -----")]
     [SerializeField] private AudioSource MusicSource;
     [SerializeField] private AudioSource effectSource;
 

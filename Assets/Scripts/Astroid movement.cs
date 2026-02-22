@@ -1,14 +1,12 @@
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class NewMonoBehaviourScript1 : MonoBehaviour
 {
-    audioscriot audioManager;
+    audioscript audioManager;
 
     private void Awake()
     {
-        audioManager = GameObject.FindGameObjectWithTag("audio").GetComponent<audioscriot>();
+        audioManager = GameObject.FindGameObjectWithTag("audio").GetComponent<audioscript>();
     }
 
     // This script controls the movement and behavior of an asteroid object in a Unity game. It handles the asteroid's movement, collision with lasers, and spawning of fragments upon destruction.
