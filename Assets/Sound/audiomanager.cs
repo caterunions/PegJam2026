@@ -13,6 +13,9 @@ public class audioscript : MonoBehaviour
     public AudioClip goblinsilly;
     public AudioClip lasershooting;
     public AudioClip collecting;
+    public AudioClip Mechinenoise;
+    public AudioClip Alarmsound;
+    public AudioClip dooropening;
 
 
     private void Start()
