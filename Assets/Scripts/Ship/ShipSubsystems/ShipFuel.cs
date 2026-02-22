@@ -94,7 +94,10 @@ public class ShipFuel : MonoBehaviour
 
         ProcessingProgress = 1f;
         
-        Fuel += amount;
+        if(Fuel > 0)
+        {
+            Fuel += amount;
+        }
 
         fuelRoutine = null;
     }
