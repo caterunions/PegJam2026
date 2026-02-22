@@ -26,6 +26,8 @@ public class ShipFuel : MonoBehaviour
     public float ProcessingProgress { get; private set; }
     private float _currentConsumptionRate = 0.5f;
 
+    private Coroutine fuelRoutine;
+
     private void OnEnable()
     {
         if (shipThrottle != null)
@@ -55,8 +57,7 @@ public class ShipFuel : MonoBehaviour
     /// <returns></returns>
     public float ProcessFuel(float amount)
     {
-        StartCoroutine(ProcessFuel());
-        Fuel += amount;
+        fuelRoutine = StartCoroutine(ProcessingRoutine(amount));
         return Fuel;
     }
 
@@ -79,7 +80,7 @@ public class ShipFuel : MonoBehaviour
         }
     }
 
-    private IEnumerator ProcessFuel()
+    private IEnumerator ProcessingRoutine(float amount)
     {
         float elapsed = 0f;
         ProcessingProgress = 0f;
@@ -92,5 +93,9 @@ public class ShipFuel : MonoBehaviour
         }
 
         ProcessingProgress = 1f;
+        
+        Fuel += amount;
+
+        fuelRoutine = null;
     }
 }
