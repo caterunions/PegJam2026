@@ -4,6 +4,7 @@ using UnityEngine.UIElements;
 
 public class NewMonoBehaviourScript1 : MonoBehaviour
 {
+    // This script controls the movement and behavior of an asteroid object in a Unity game. It handles the asteroid's movement, collision with lasers, and spawning of fragments upon destruction.
     public GameObject fragment;
     private Rigidbody rb;
     private MeshRenderer meshRenderer;
@@ -16,7 +17,7 @@ public class NewMonoBehaviourScript1 : MonoBehaviour
     [SerializeField] private Mesh[] meshs;
     [SerializeField] private Material[] materials;
 
-    // This is going forward in the x
+    // Initializes the mesh renderer and mesh filter, sets a random mesh and material, and applies an initial velocity to the object.
     void Start()
     {
         meshRenderer = GetComponent<MeshRenderer>();
@@ -29,6 +30,8 @@ public class NewMonoBehaviourScript1 : MonoBehaviour
         float pushZ = Random.Range(-1f, 1f);
     }
 
+
+    // Moves the object forward in the x direction at a constant speed, and destroys it if it goes out of bounds.
     void Update()
     {
         float moveX = speed * Time.deltaTime;
@@ -49,6 +52,7 @@ public class NewMonoBehaviourScript1 : MonoBehaviour
 
     }
 
+    // When the object collides with an object tagged "laser", it spawns fragments and destroys itself and the laser.
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("laser"))
@@ -59,6 +63,8 @@ public class NewMonoBehaviourScript1 : MonoBehaviour
         }
     }
 
+
+    // Spawns fragments in a circle around the destroyed object, with a random offset and random force applied to each fragment.
     void SpawnFragments()
     {
         int amountSpawned = Random.Range(minFragmentCount, maxFragmentCount + 1);
