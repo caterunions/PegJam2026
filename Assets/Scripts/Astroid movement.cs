@@ -4,6 +4,13 @@ using UnityEngine.UIElements;
 
 public class NewMonoBehaviourScript1 : MonoBehaviour
 {
+    audioscriot audioManager;
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("audio").GetComponent<audioscriot>();
+    }
+
     // This script controls the movement and behavior of an asteroid object in a Unity game. It handles the asteroid's movement, collision with lasers, and spawning of fragments upon destruction.
     public GameObject fragment;
     private Rigidbody rb;
@@ -13,6 +20,7 @@ public class NewMonoBehaviourScript1 : MonoBehaviour
     private int maxFragmentCount = 5;
     private float floatforce;
     public float speed;
+
 
     [SerializeField] private Mesh[] meshs;
     [SerializeField] private Material[] materials;
@@ -28,6 +36,7 @@ public class NewMonoBehaviourScript1 : MonoBehaviour
         rb.linearVelocity = new Vector3(-1, 0, 0);
         float pushX = Random.Range(-1f, 0);
         float pushZ = Random.Range(-1f, 1f);
+
     }
 
 
@@ -57,6 +66,7 @@ public class NewMonoBehaviourScript1 : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("laser"))
         {
+            audioManager.playsfx(audioManager.Explosion);
             SpawnFragments();
             Destroy(gameObject);
             Destroy (collision.gameObject);
