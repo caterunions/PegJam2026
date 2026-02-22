@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 2160542204671365495}
   - component: {fileID: 1401496913797323793}
   - component: {fileID: 6468158075449560881}
-  m_Layer: 0
-  m_Name: Cube (1)
+  m_Layer: 9
+  m_Name: Asteroid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,8 +31,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.2845, y: 3.25, z: 5.1144}
-  m_LocalScale: {x: 33.85951, y: 33.85951, z: 33.85951}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 20, y: 20, z: 20}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -69,7 +69,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 97b6407d4bedf4140b13966a40bd6ede, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -103,7 +103,7 @@ Rigidbody:
   serializedVersion: 5
   m_Mass: 1
   m_LinearDamping: 0
-  m_AngularDamping: 0.05
+  m_AngularDamping: 0
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -133,7 +133,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NewMonoBehaviourScript1
   fragment: {fileID: 990695632525401628, guid: aacae16767c6e8c49a95cd4408d25ad2, type: 3}
-  speed: -5
+  speed: 2
   meshs:
   - {fileID: -7821676632715433180, guid: b48dec3597ea8be4c9c12d6fdf945244, type: 3}
   - {fileID: 1062598958945298240, guid: cd26fb81359f473448c30253fbaaa7b0, type: 3}
@@ -142,7 +142,7 @@ MonoBehaviour:
   - {fileID: 3626493562366998968, guid: 9af86ecb486e3a946ab47c5f4f8f45ca, type: 3}
   - {fileID: -8552072437728588075, guid: 0e128fd6d7434184595b455fd2d493b6, type: 3}
   materials:
-  - {fileID: 4807130181343202628, guid: b48dec3597ea8be4c9c12d6fdf945244, type: 3}
+  - {fileID: 2100000, guid: 97b6407d4bedf4140b13966a40bd6ede, type: 2}
 --- !u!135 &6468158075449560881
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -150,7 +150,7 @@ SphereCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9070376365597946530}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 48fab5cc3e62d3d499dd78ab2d4c638f, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
