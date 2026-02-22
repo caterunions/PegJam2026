@@ -4,9 +4,9 @@ using UnityEngine.SceneManagement;
 
 public class SceneGod : MonoBehaviour
 {
-    [SerializeField] private string deathScene;
+    [SerializeField] private string deathScene = "DeatjScene";
     [SerializeField] private string gameScene = "Gameplay";
-    [SerializeField] private string mainMenuScene;
+    [SerializeField] private string mainMenuScene = "MainMenuScene";
     public static SceneGod SInstance { get; private set; }
 
     public enum GameState
