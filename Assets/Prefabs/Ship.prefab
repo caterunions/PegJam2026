@@ -3586,6 +3586,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 252285915506132345}
     m_Modifications:
+    - target: {fileID: 2872450510025555786, guid: 048270796ea81604bb9b8a3733ebbc98,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4834638853777812066, guid: 048270796ea81604bb9b8a3733ebbc98,
         type: 3}
       propertyPath: gunMuzzle
@@ -3619,27 +3624,27 @@ PrefabInstance:
     - target: {fileID: 7538042347350955168, guid: 048270796ea81604bb9b8a3733ebbc98,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.832
+      value: 2.305
       objectReference: {fileID: 0}
     - target: {fileID: 7538042347350955168, guid: 048270796ea81604bb9b8a3733ebbc98,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.97629607
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7538042347350955168, guid: 048270796ea81604bb9b8a3733ebbc98,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7538042347350955168, guid: 048270796ea81604bb9b8a3733ebbc98,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.2164396
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7538042347350955168, guid: 048270796ea81604bb9b8a3733ebbc98,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7538042347350955168, guid: 048270796ea81604bb9b8a3733ebbc98,
         type: 3}
@@ -3649,7 +3654,7 @@ PrefabInstance:
     - target: {fileID: 7538042347350955168, guid: 048270796ea81604bb9b8a3733ebbc98,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 25
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7538042347350955168, guid: 048270796ea81604bb9b8a3733ebbc98,
         type: 3}
@@ -3751,6 +3756,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 252285915506132345}
     m_Modifications:
+    - target: {fileID: 2872450510025555786, guid: 048270796ea81604bb9b8a3733ebbc98,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4834638853777812066, guid: 048270796ea81604bb9b8a3733ebbc98,
         type: 3}
       propertyPath: gunMuzzle
@@ -3769,7 +3779,7 @@ PrefabInstance:
     - target: {fileID: 7538042347350955168, guid: 048270796ea81604bb9b8a3733ebbc98,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.179
+      value: -2.68
       objectReference: {fileID: 0}
     - target: {fileID: 7538042347350955168, guid: 048270796ea81604bb9b8a3733ebbc98,
         type: 3}
@@ -3779,12 +3789,12 @@ PrefabInstance:
     - target: {fileID: 7538042347350955168, guid: 048270796ea81604bb9b8a3733ebbc98,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 8.515
+      value: 8.212
       objectReference: {fileID: 0}
     - target: {fileID: 7538042347350955168, guid: 048270796ea81604bb9b8a3733ebbc98,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.97629607
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7538042347350955168, guid: 048270796ea81604bb9b8a3733ebbc98,
         type: 3}
@@ -3794,7 +3804,7 @@ PrefabInstance:
     - target: {fileID: 7538042347350955168, guid: 048270796ea81604bb9b8a3733ebbc98,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.21643952
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7538042347350955168, guid: 048270796ea81604bb9b8a3733ebbc98,
         type: 3}
@@ -3809,7 +3819,7 @@ PrefabInstance:
     - target: {fileID: 7538042347350955168, guid: 048270796ea81604bb9b8a3733ebbc98,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -25
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7538042347350955168, guid: 048270796ea81604bb9b8a3733ebbc98,
         type: 3}
@@ -3835,6 +3845,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 252285915506132345}
     m_Modifications:
+    - target: {fileID: 1323636211902901631, guid: 62180dedb5b42aa41b3f76f5607fa031,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2378803955036650727, guid: 62180dedb5b42aa41b3f76f5607fa031,
         type: 3}
       propertyPath: m_Name
@@ -3843,17 +3858,17 @@ PrefabInstance:
     - target: {fileID: 3104664471916641766, guid: 62180dedb5b42aa41b3f76f5607fa031,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.5029898
+      value: -2.029
       objectReference: {fileID: 0}
     - target: {fileID: 3104664471916641766, guid: 62180dedb5b42aa41b3f76f5607fa031,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.962
+      value: 0.88
       objectReference: {fileID: 0}
     - target: {fileID: 3104664471916641766, guid: 62180dedb5b42aa41b3f76f5607fa031,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5.2279367
+      value: 5.897
       objectReference: {fileID: 0}
     - target: {fileID: 3104664471916641766, guid: 62180dedb5b42aa41b3f76f5607fa031,
         type: 3}
@@ -3922,7 +3937,7 @@ PrefabInstance:
     - target: {fileID: 317981995140545772, guid: 7b2c4e0109d57b9408e0ec403bec0597,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -14.75
+      value: -15.88
       objectReference: {fileID: 0}
     - target: {fileID: 317981995140545772, guid: 7b2c4e0109d57b9408e0ec403bec0597,
         type: 3}
@@ -3973,6 +3988,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Fuel Acceptor
+      objectReference: {fileID: 0}
+    - target: {fileID: 4637615731534704404, guid: 7b2c4e0109d57b9408e0ec403bec0597,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

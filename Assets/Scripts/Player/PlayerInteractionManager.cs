@@ -59,6 +59,9 @@ public class PlayerInteractionManager : MonoBehaviour
         {
             holdingFuel = true;
             other.transform.SetParent(transform, true);
+            Destroy(other.GetComponent<Rigidbody>());
+            Destroy(other.GetComponent<FuelDespawn>());
+            other.transform.localScale = Vector3.one;
             other.transform.localPosition = Vector3.zero;
             heldFuel = other.gameObject;
         }

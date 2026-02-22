@@ -1,12 +1,12 @@
 using UnityEngine;
 
-public class NewMonoBehaviourScript1 : MonoBehaviour
+public class AsteroidMovement : MonoBehaviour
 {
-    audioscript audioManager;
+    //audioscript audioManager;
 
     private void Awake()
     {
-        audioManager = GameObject.FindGameObjectWithTag("audio").GetComponent<audioscript>();
+        //audioManager = GameObject.FindGameObjectWithTag("audio").GetComponent<audioscript>();
     }
 
     // This script controls the movement and behavior of an asteroid object in a Unity game. It handles the asteroid's movement, collision with lasers, and spawning of fragments upon destruction.
@@ -15,9 +15,10 @@ public class NewMonoBehaviourScript1 : MonoBehaviour
     private MeshRenderer meshRenderer;
     private MeshFilter meshFilter;
     private int minFragmentCount = 1;
-    private int maxFragmentCount = 5;
-    private float floatforce;
+    private int maxFragmentCount = 3;
+    private float floatforce = 1;
     public float speed;
+
 
     [SerializeField] private Mesh[] meshs;
     [SerializeField] private Material[] materials;
@@ -30,17 +31,18 @@ public class NewMonoBehaviourScript1 : MonoBehaviour
         meshRenderer.material = materials[0];
         meshFilter.mesh = meshs[Random.Range(0,meshs.Length)];
         rb = this.GetComponent<Rigidbody>();
-        rb.linearVelocity = new Vector3(-1, 0, 0);
-        float pushX = Random.Range(-1f, 0);
-        float pushZ = Random.Range(-1f, 1f);
+        rb.linearVelocity = new Vector3(-speed * Random.Range(0.8f, 1.2f), 0, 0);
+        rb.angularVelocity = new Vector3(Random.Range(-0.5f, 0.5f), Random.Range(-0.5f, 0.5f), Random.Range(-0.5f, 0.5f));
     }
 
 
     // Moves the object forward in the x direction at a constant speed, and destroys it if it goes out of bounds.
     void Update()
     {
-        float moveX = speed * Time.deltaTime;
-        transform.position += new Vector3(moveX, 0, 0);
+        if (rb.linearVelocity.sqrMagnitude < speed * speed)
+        {
+            rb.linearVelocity = rb.linearVelocity.normalized * speed;
+        }
 
         if (transform.position.z < -10)
         {
@@ -50,7 +52,7 @@ public class NewMonoBehaviourScript1 : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        else if (transform.position.x > 20)
+        else if (transform.position.x > 30)
         {
             Destroy(gameObject);
         }
@@ -58,14 +60,14 @@ public class NewMonoBehaviourScript1 : MonoBehaviour
     }
 
     // When the object collides with an object tagged "laser", it spawns fragments and destroys itself and the laser.
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.CompareTag("laser"))
+        if (other.gameObject.CompareTag("laser"))
         {
-            audioManager.playsfx(audioManager.Explosion);
+            //audioManager.playsfx(audioManager.Explosion);
             SpawnFragments();
             Destroy(gameObject);
-            Destroy (collision.gameObject);
+            Destroy(other.transform.root.gameObject);
         }
     }
 
@@ -76,7 +78,7 @@ public class NewMonoBehaviourScript1 : MonoBehaviour
         int amountSpawned = Random.Range(minFragmentCount, maxFragmentCount + 1);
         float circle = 360f / amountSpawned;
         float randomoffset = Random.Range(0f, circle);
-        float radius = 2f;
+        float radius = 1f;
 
         for (int i = 0; i < amountSpawned; i++)
         {
@@ -86,7 +88,7 @@ public class NewMonoBehaviourScript1 : MonoBehaviour
             Vector3 direction = new Vector3(Mathf.Cos(radians), 0, Mathf.Sin(radians));
             
             Vector3 spawnPos = transform.position + direction * radius;
-            GameObject newFragment = Instantiate(fragment, spawnPos, Quaternion.identity);
+            GameObject newFragment = Instantiate(fragment, new Vector3(spawnPos.x, 1.5f, spawnPos.z), Quaternion.identity);
             Rigidbody fragmentRb = newFragment.GetComponent<Rigidbody>();
 
             
@@ -101,7 +103,7 @@ public class NewMonoBehaviourScript1 : MonoBehaviour
 
             if (fragmentRb != null)
             {
-                fragmentRb.AddForce(direction * floatforce, ForceMode.Impulse);
+                fragmentRb.AddForce(direction * Random.Range(0.2f, 1.3f), ForceMode.Impulse);
 
                 fragmentRb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
             }
