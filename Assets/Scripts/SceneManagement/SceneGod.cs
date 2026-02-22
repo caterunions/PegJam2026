@@ -7,12 +7,14 @@ public class SceneGod : MonoBehaviour
     [SerializeField] private string deathScene = "DeatjScene";
     [SerializeField] private string gameScene = "Gameplay";
     [SerializeField] private string mainMenuScene = "MainMenuScene";
+    [SerializeField] private string winMenuScene = "WinScene";
     public static SceneGod SInstance { get; private set; }
 
     public enum GameState
     {
         Death,
         Game,
+        Win,
         MainMenu,
         Quit
     }
@@ -109,6 +111,19 @@ public class SceneGod : MonoBehaviour
         else
         {
             Debug.LogWarning("Already in Death Scene!");
+        }
+    }
+    
+    private void EnterWinState()
+    {
+        if (_currentState != GameState.Win)
+        {
+            _currentState = GameState.Win;
+            SceneManager.LoadScene(winMenuScene);
+        }
+        else
+        {
+            Debug.LogWarning("Already in Win Scene!");
         }
     }
 
