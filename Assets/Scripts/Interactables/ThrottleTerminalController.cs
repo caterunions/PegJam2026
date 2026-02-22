@@ -5,6 +5,7 @@ public class ThrottleTerminalController : InteractableController
 {
     [SerializeField]
     private ShipThrottle shipThrottle;
+    public ShipThrottle ShipThrottle => shipThrottle;
 
     [SerializeField]
     private Image throttlePointer;

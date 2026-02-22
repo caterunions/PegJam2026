@@ -8,7 +8,10 @@ public abstract class InteractableController : MonoBehaviour
     public Vector2 ExitDirection => exitDirection;
 
     [SerializeField]
-    private GameObject ui;
+    private GameObject displayUI;
+
+    [SerializeField]
+    private GameObject controlsUI;
 
     private bool isInUse = false;
     public bool IsInUse => isInUse;
@@ -19,9 +22,14 @@ public abstract class InteractableController : MonoBehaviour
     {
         isInUse = true;
 
-        if (ui != null && player)
+        if (displayUI != null)
         {
-            ui.SetActive(true);
+            displayUI.SetActive(true);
+        }
+
+        if (controlsUI != null && player)
+        {
+            controlsUI.SetActive(true);
         }
     }
 
@@ -29,9 +37,14 @@ public abstract class InteractableController : MonoBehaviour
     {
         isInUse = false;
 
-        if (ui != null && player)
+        if(displayUI != null)
         {
-            ui.SetActive(false);
+            displayUI.SetActive(false);
+        }
+
+        if (controlsUI != null && player)
+        {
+            controlsUI.SetActive(false);
         }
     }
 }

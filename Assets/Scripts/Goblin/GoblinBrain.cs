@@ -14,6 +14,9 @@ public class GoblinBrain : MonoBehaviour
     [SerializeField]
     private GunTerminalController gunTerminalBottom;
 
+    [SerializeField]
+    private ThrottleTerminalController throttleTerminal;
+
     private void Update()
     {
         if (currentTaskRoutine == null)
@@ -21,6 +24,10 @@ public class GoblinBrain : MonoBehaviour
             if (Random.Range(0, 4) == 0)
             {
                 currentTaskRoutine = StartCoroutine(MessWithGunTask());
+            }
+            else if (Random.Range(0, 4) == 0)
+            {
+                currentTaskRoutine = StartCoroutine(MessWithThrottleTask());
             }
             else
             {
@@ -55,6 +62,12 @@ public class GoblinBrain : MonoBehaviour
 
         yield return new WaitUntil(() => agent.remainingDistance <= 0.1f);
 
+        if (selectedTerminal.IsInUse)
+        {
+            StopCoroutine(currentTaskRoutine);
+            currentTaskRoutine = null;
+        }
+
         selectedTerminal.StartInteract(player: false);
 
         int times = Random.Range(2, 6);
@@ -73,6 +86,42 @@ public class GoblinBrain : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
 
         selectedTerminal.StopInteract(player: false);
+
+        StopCoroutine(currentTaskRoutine);
+        currentTaskRoutine = null;
+    }
+
+    private IEnumerator MessWithThrottleTask()
+    {
+        if(throttleTerminal.IsInUse)
+        {
+            StopCoroutine(currentTaskRoutine);
+            currentTaskRoutine = null;
+        }
+
+        agent.SetDestination(throttleTerminal.transform.position - Vector3.right);
+
+        yield return new WaitForSeconds(0.2f);
+
+        yield return new WaitUntil(() => agent.remainingDistance <= 0.1f);
+
+        if (throttleTerminal.IsInUse)
+        {
+            StopCoroutine(currentTaskRoutine);
+            currentTaskRoutine = null;
+        }
+
+        throttleTerminal.StartInteract(player: false);
+
+        throttleTerminal.HandleInput(new Vector2(0, Random.Range(0, 2) * 2 - 1));
+
+        yield return new WaitForSeconds(Random.Range(0.3f, 1f));
+
+        throttleTerminal.HandleInput(Vector2.zero);
+
+        yield return new WaitForSeconds(0.5f);
+
+        throttleTerminal.StopInteract(player: false);
 
         StopCoroutine(currentTaskRoutine);
         currentTaskRoutine = null;
