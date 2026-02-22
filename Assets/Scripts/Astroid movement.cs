@@ -62,6 +62,7 @@ public class NewMonoBehaviourScript1 : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("laser"))
         {
+            audioManager.playsfx(audioManager.Explosion);
             SpawnFragments();
             Destroy(gameObject);
             Destroy (collision.gameObject);
