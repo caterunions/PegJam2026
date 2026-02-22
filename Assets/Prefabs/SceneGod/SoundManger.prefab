@@ -185,6 +185,7 @@ MonoBehaviour:
   Mechinenoise: {fileID: 8300000, guid: 23b899722e2f2994e900b69e81c6b862, type: 3}
   Alarmsound: {fileID: 8300000, guid: 84cbdccdf7cb1a44c943b07363822d88, type: 3}
   dooropening: {fileID: 0}
+  Intromusic: {fileID: 0}
 --- !u!1 &8611975277223352896
 GameObject:
   m_ObjectHideFlags: 0
@@ -232,7 +233,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

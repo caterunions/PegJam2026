@@ -1,13 +1,12 @@
 using UnityEngine;
 
-public class audioscript : MonoBehaviour
+public class AudioScript : MonoBehaviour
 {
-    [Header("-----audioscript -----")]
+    [Header("----- AudioScript -----")]
     [SerializeField] private AudioSource MusicSource;
     [SerializeField] private AudioSource effectSource;
 
-    
-    [Header("-----AudioClips -----")]
+    [Header("----- AudioClips -----")]
     public AudioClip backgroundMusic;
     public AudioClip Explosion;
     public AudioClip goblinsilly;
@@ -18,51 +17,98 @@ public class audioscript : MonoBehaviour
     public AudioClip dooropening;
     public AudioClip Intromusic;
 
+    // ── Music Methods ────────────────────────────────────────────────
 
-
-    public void GameStartMusic()
+    public void PlayBackgroundMusic()
     {
-        MusicSource.Stop();
-        MusicSource.clip = backgroundMusic;
-        MusicSource.Play();
-
+        PlayMusic(backgroundMusic);
     }
 
-    private void playsfx(AudioClip clip)
+    public void PlayIntroMusic()
     {
+        PlayMusic(Intromusic);
+    }
+
+    public void StopMusic()
+    {
+        MusicSource.Stop();
+    }
+
+    // ── SFX Methods ──────────────────────────────────────────────────
+
+    public void PlayExplosionSound()
+    {
+        PlaySFX(Explosion);
+    }
+
+    public void PlayGoblinSound()
+    {
+        PlaySFX(goblinsilly);
+    }
+
+    public void PlayLaserSound()
+    {
+        PlaySFX(lasershooting);
+    }
+
+    public void PlayCollectSound()
+    {
+        PlaySFX(collecting);
+    }
+
+    public void PlayMachineSound()
+    {
+        PlaySFX(Mechinenoise);
+    }
+
+    public void PlayAlarmSound()
+    {
+        PlaySFX(Alarmsound);
+    }
+
+    public void PlayDoorSound()
+    {
+        PlaySFX(dooropening);
+    }
+
+    // ── Compound Methods ─────────────────────────────────────────────
+
+    public void PlayProcessOreSound()
+    {
+        PlaySFX(Mechinenoise);
+    }
+
+    // ── Internal Helpers ─────────────────────────────────────────────
+
+    private void PlayMusic(AudioClip clip)
+    {
+        if (clip == null)
+        {
+            Debug.LogWarning("[AudioScript] Music clip is null.");
+            return;
+        }
+
+        MusicSource.Stop();
+        MusicSource.clip = clip;
+        MusicSource.Play();
+    }
+
+    private void PlaySFX(AudioClip clip)
+    {
+        if (clip == null)
+        {
+            Debug.LogWarning("[AudioScript] SFX clip is null.");
+            return;
+        }
+
         effectSource.PlayOneShot(clip);
     }
 
-    public void ProcessOreSound()
+    // ── Lifecycle ────────────────────────────────────────────────────
+
+    private void OnDestroy()
     {
-        MusicSource.Stop();
-        playsfx(Mechinenoise);
-        MusicSource.Play();
+        if (SceneGod.SInstance != null)
+            SceneGod.SInstance.audioSystem = null;
     }
-
-    public void explode()
-    {
-
-    }
-
-    public void gobtime()
-    {
-
-    }
-
-    public void lasershot()
-    {
-
-    }
-
-    public void collect()
-    {
-
-    }
-
-    public void intro()
-    {
-        
-    }
-
 }

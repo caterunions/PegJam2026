@@ -57,7 +57,7 @@ public class ShipFuel : MonoBehaviour
     /// <returns></returns>
     public float ProcessFuel(float amount)
     {
-        SceneGod.SInstance.audioSystem.ProcessOreSound();
+        SceneGod.SInstance.audioSystem.PlayProcessOreSound();
         fuelRoutine = StartCoroutine(ProcessingRoutine(amount));
         return Fuel;
     }

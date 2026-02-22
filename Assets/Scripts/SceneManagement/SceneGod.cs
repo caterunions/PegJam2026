@@ -22,7 +22,7 @@ public class SceneGod : MonoBehaviour
 
     // services
 
-    [SerializeField] public audioscript audioSystem;
+    [SerializeField] public AudioScript audioSystem;
 
     //state
     public GameState _currentState { get; private set; }
@@ -56,7 +56,10 @@ public class SceneGod : MonoBehaviour
 
     private void Start()
     {
-        audioSystem = GetComponentInChildren<audioscript>();
+        //ensures we go thru menu
+        EnterMainMenuState();
+        audioSystem = GetComponentInChildren<AudioScript>();
+        
     }
 
     /// <summary>
@@ -99,7 +102,7 @@ public class SceneGod : MonoBehaviour
             Debug.LogWarning("Already in Game Scene!");
         }
 
-        audioSystem.GameStartMusic();
+        audioSystem?.PlayBackgroundMusic();
     }
 
     private void EnterDeathState()
@@ -139,7 +142,8 @@ public class SceneGod : MonoBehaviour
         {
             Debug.LogWarning("Already in Main Menu Scene!");
         }
-        //audioSystem.start
+
+        audioSystem?.PlayIntroMusic();
     }
     
     public void EnterQuitState()

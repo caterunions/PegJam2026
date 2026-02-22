@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class doorssound : MonoBehaviour
 {
-    audioscript audioManager;
+    //audioscript audioManager;
 
     private void Awake()
     {
-        audioManager = GameObject.FindGameObjectWithTag("audio").GetComponent<audioscript>();
+        //audioManager = GameObject.FindGameObjectWithTag("audio").GetComponent<audioscript>();
     }
 
 
