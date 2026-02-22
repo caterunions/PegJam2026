@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private Light skyLight;
 
-    private float loseTimer = 4;
+    private float loseTimer = 0;
 
     private Vector3 camPos;
 
@@ -34,7 +34,12 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if(fuel.Fuel <= 0)
+        if (loseTimer >= 4)
+        {
+            SceneGod.SInstance.IncrementDeaths();
+        }
+
+        if (fuel.Fuel <= 0)
         {
             loseTimer += Time.deltaTime;
 
@@ -43,7 +48,7 @@ public class GameManager : MonoBehaviour
             mainCam.transform.position = camPos + new Vector3(Random.Range(-0.2f, 0.2f), Random.Range(-0.2f, 0.2f), 0);
 
             return;
-        }
+        }  
 
         if(throttle.Throttle >= 0.4f && throttle.Throttle <= 0.6f)
         {
