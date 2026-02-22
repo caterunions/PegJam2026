@@ -19,7 +19,6 @@ public class NewMonoBehaviourScript1 : MonoBehaviour
     private float floatforce;
     public float speed;
 
-
     [SerializeField] private Mesh[] meshs;
     [SerializeField] private Material[] materials;
 
@@ -34,7 +33,6 @@ public class NewMonoBehaviourScript1 : MonoBehaviour
         rb.linearVelocity = new Vector3(-1, 0, 0);
         float pushX = Random.Range(-1f, 0);
         float pushZ = Random.Range(-1f, 1f);
-
     }
 
 
@@ -64,7 +62,6 @@ public class NewMonoBehaviourScript1 : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("laser"))
         {
-            audioManager.playsfx(audioManager.Explosion);
             SpawnFragments();
             Destroy(gameObject);
             Destroy (collision.gameObject);

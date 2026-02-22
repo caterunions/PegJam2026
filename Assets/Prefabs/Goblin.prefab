@@ -71,7 +71,6 @@ MonoBehaviour:
   agent: {fileID: 8134661743711011004}
   gunTerminalTop: {fileID: 0}
   gunTerminalBottom: {fileID: 0}
-  throttleTerminal: {fileID: 0}
 --- !u!1001 &8266788046911984661
 PrefabInstance:
   m_ObjectHideFlags: 0
