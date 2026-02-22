@@ -30,7 +30,7 @@ public class PlayerInteractionManager : MonoBehaviour
     {
         InteractableController? controller = other.GetComponent<InteractableController>();
 
-        if(controller != null)
+        if(controller != null && !controller.IsInUse)
         {
             currentInteraction = controller;
             currentInteraction.StartInteract();

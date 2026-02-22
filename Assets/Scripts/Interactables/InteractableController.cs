@@ -10,19 +10,26 @@ public abstract class InteractableController : MonoBehaviour
     [SerializeField]
     private GameObject ui;
 
+    private bool isInUse = false;
+    public bool IsInUse => isInUse;
+
     public abstract void HandleInput(Vector2 input);
 
-    public void StartInteract()
+    public void StartInteract(bool player = true)
     {
-        if (ui != null)
+        isInUse = true;
+
+        if (ui != null && player)
         {
             ui.SetActive(true);
         }
     }
 
-    public void StopInteract()
+    public void StopInteract(bool player = true)
     {
-        if (ui != null)
+        isInUse = false;
+
+        if (ui != null && player)
         {
             ui.SetActive(false);
         }
