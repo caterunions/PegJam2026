@@ -7,6 +7,9 @@ public class GoblinBrain : MonoBehaviour
     [SerializeField]
     private NavMeshAgent agent;
 
+    [SerializeField]
+    private Animator animator;
+
     private Coroutine currentTaskRoutine;
 
     [SerializeField]
@@ -19,6 +22,8 @@ public class GoblinBrain : MonoBehaviour
 
     private void Update()
     {
+        animator.SetFloat("Velocity", agent.velocity.magnitude);
+
         if (currentTaskRoutine == null)
         {
             if (Random.Range(0, 4) == 0)
@@ -70,6 +75,8 @@ public class GoblinBrain : MonoBehaviour
 
         selectedTerminal.StartInteract(player: false);
 
+        animator.SetBool("Interacting", true);
+
         int times = Random.Range(2, 6);
 
         for(int i = 0; i < 3; i++)
@@ -82,6 +89,8 @@ public class GoblinBrain : MonoBehaviour
         }
 
         selectedTerminal.HandleInput(Vector2.zero);
+
+        animator.SetBool("Interacting", false);
 
         yield return new WaitForSeconds(0.5f);
 
@@ -113,11 +122,15 @@ public class GoblinBrain : MonoBehaviour
 
         throttleTerminal.StartInteract(player: false);
 
+        animator.SetBool("Interacting", true);
+
         throttleTerminal.HandleInput(new Vector2(0, Random.Range(0, 2) * 2 - 1));
 
         yield return new WaitForSeconds(Random.Range(0.3f, 1f));
 
         throttleTerminal.HandleInput(Vector2.zero);
+
+        animator.SetBool("Interacting", false);
 
         yield return new WaitForSeconds(0.5f);
 
