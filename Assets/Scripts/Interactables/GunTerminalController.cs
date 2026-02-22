@@ -41,6 +41,7 @@ public class GunTerminalController : InteractableController
     public void Fire()
     {
         Instantiate(bullet, gunMuzzle.position, gunMuzzle.rotation);
+        SceneGod.SInstance.audioSystem.PlayLaserSound();
     }
 
     private void Update()

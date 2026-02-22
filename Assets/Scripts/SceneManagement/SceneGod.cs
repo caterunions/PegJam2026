@@ -58,7 +58,6 @@ public class SceneGod : MonoBehaviour
     {
         //ensures we go thru menu
         EnterMainMenuState();
-        audioSystem = GetComponentInChildren<AudioScript>();
         
     }
 
@@ -92,6 +91,8 @@ public class SceneGod : MonoBehaviour
 
     public void EnterGameState()
     {
+        audioSystem.PlayBackgroundMusic();
+
         if (_currentState != GameState.Game)
         {
             _currentState = GameState.Game;
@@ -102,7 +103,7 @@ public class SceneGod : MonoBehaviour
             Debug.LogWarning("Already in Game Scene!");
         }
 
-        audioSystem?.PlayBackgroundMusic();
+        
     }
 
     private void EnterDeathState()

@@ -48,7 +48,7 @@ public class AudioScript : MonoBehaviour
 
     public void PlayLaserSound()
     {
-        PlaySFX(lasershooting);
+        effectSource.PlayOneShot(lasershooting, 0.3f);
     }
 
     public void PlayCollectSound()
@@ -58,7 +58,7 @@ public class AudioScript : MonoBehaviour
 
     public void PlayMachineSound()
     {
-        PlaySFX(Mechinenoise);
+        effectSource.PlayOneShot(Mechinenoise, 0.5f);
     }
 
     public void PlayAlarmSound()
@@ -82,15 +82,14 @@ public class AudioScript : MonoBehaviour
 
     private void PlayMusic(AudioClip clip)
     {
+        MusicSource.clip = clip;
+        MusicSource.Play();
+
         if (clip == null)
         {
             Debug.LogWarning("[AudioScript] Music clip is null.");
             return;
         }
-
-        MusicSource.Stop();
-        MusicSource.clip = clip;
-        MusicSource.Play();
     }
 
     private void PlaySFX(AudioClip clip)
@@ -108,7 +107,6 @@ public class AudioScript : MonoBehaviour
 
     private void OnDestroy()
     {
-        if (SceneGod.SInstance != null)
-            SceneGod.SInstance.audioSystem = null;
+        
     }
 }
