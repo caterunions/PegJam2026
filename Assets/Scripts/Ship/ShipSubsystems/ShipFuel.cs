@@ -21,10 +21,10 @@ public class ShipFuel : MonoBehaviour
     public event Action OnFuelLow;
     public event Action OnFuelCritical;
 
-    public float Fuel { get; private set; }
-    public float FuelPercent => startingFuel > 0 ? Fuel / startingFuel : 0f;
+    public float Fuel { get; private set; } = 20;
+    public float FuelPercent => startingFuel > 0 ? Fuel / maxFuel : 0f;
     public float ProcessingProgress { get; private set; }
-    private float _currentConsumptionRate;
+    private float _currentConsumptionRate = 0.5f;
 
     private void OnEnable()
     {

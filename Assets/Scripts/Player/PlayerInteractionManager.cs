@@ -3,11 +3,15 @@ using UnityEngine;
 public class PlayerInteractionManager : MonoBehaviour
 {
     [SerializeField]
-    private PlayerMovement playerMovement; 
+    private PlayerMovement playerMovement;
+
+    private GameObject heldFuel = null;
 
     private Vector2 lastKnownMoveInput;
 
     private InteractableController currentInteraction;
+
+    private bool holdingFuel = false;
 
     public void HandleMove(Vector2 moveInput)
     {
@@ -28,6 +32,20 @@ public class PlayerInteractionManager : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (holdingFuel)
+        {
+            FuelAcceptor? fuelAcceptor = other.GetComponent<FuelAcceptor>();
+
+            if (fuelAcceptor != null)
+            {
+                fuelAcceptor.ReceiveFuel();
+                holdingFuel = false;
+                Destroy(heldFuel);
+            }
+
+            return;
+        }
+
         InteractableController? controller = other.GetComponent<InteractableController>();
 
         if(controller != null && !controller.IsInUse)
@@ -35,6 +53,14 @@ public class PlayerInteractionManager : MonoBehaviour
             currentInteraction = controller;
             currentInteraction.StartInteract();
             playerMovement.Deactivate();
+        }
+
+        if(other.gameObject.CompareTag("Fuel"))
+        {
+            holdingFuel = true;
+            other.transform.SetParent(transform, true);
+            other.transform.localPosition = Vector3.zero;
+            heldFuel = other.gameObject;
         }
     }
 }
