@@ -21,8 +21,8 @@ public class ThrottleTerminalController : InteractableController
     {
         if(lastKnownYInput != 0)
         {
-            shipThrottle.UpdateThrottle(shipThrottle.Throttle + (lastKnownYInput * Time.deltaTime * -0.5f));
+            shipThrottle.UpdateThrottle(shipThrottle.Throttle + (lastKnownYInput * Time.deltaTime * 0.5f));
         }
-        throttlePointer.rectTransform.localRotation = Quaternion.Euler(0, 0, (shipThrottle.Throttle - 0.5f) * 105f);
+        throttlePointer.rectTransform.localRotation = Quaternion.Euler(0, 0, (shipThrottle.Throttle - 0.5f) * -105f);
     }
 }

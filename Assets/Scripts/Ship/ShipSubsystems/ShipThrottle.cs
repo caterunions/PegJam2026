@@ -21,7 +21,7 @@ public class ShipThrottle : MonoBehaviour
     public void UpdateThrottle(float value)
     {
         Throttle = Mathf.Clamp01(value);
-        float newConsumptionRate = shipMaxFuelConsumption * Throttle;
+        float newConsumptionRate = Throttle;
         OnConsumptionRateChanged?.Invoke(newConsumptionRate);
     }
 }

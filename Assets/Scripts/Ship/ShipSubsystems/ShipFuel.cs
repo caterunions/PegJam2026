@@ -6,7 +6,7 @@ public class ShipFuel : MonoBehaviour
 {
     //TODO add unity event for Zach that signals when to play processing sound
     [Header("Initialization")] [SerializeField]
-    private float startingFuel = 10f;
+    private float startingFuel = 30f;
 
     [SerializeField] private float maxFuel = 30f;
     [Header("Events")] [SerializeField] private float fuelLow = 0.5f;
@@ -21,7 +21,7 @@ public class ShipFuel : MonoBehaviour
     public event Action OnFuelLow;
     public event Action OnFuelCritical;
 
-    public float Fuel { get; private set; } = 20;
+    public float Fuel { get; private set; } = 30;
     public float FuelPercent => startingFuel > 0 ? Fuel / maxFuel : 0f;
     public float ProcessingProgress { get; private set; }
     private float _currentConsumptionRate = 0.5f;
