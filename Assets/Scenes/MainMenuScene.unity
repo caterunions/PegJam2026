@@ -150,7 +150,7 @@ PrefabInstance:
     - target: {fileID: 2574296532888433139, guid: d75fc63090cce2f409c475906fe538cd,
         type: 3}
       propertyPath: targetState
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4008493137290382193, guid: d75fc63090cce2f409c475906fe538cd,
         type: 3}
@@ -517,6 +517,7 @@ MonoBehaviour:
   deathScene: DeathScene
   gameScene: Gameplay
   mainMenuScene: MainMenuScene
+  winMenuScene: WinScene
   audioSystem: {fileID: 0}
   player: {fileID: 0}
 --- !u!1 &1556426926
@@ -769,7 +770,7 @@ PrefabInstance:
     - target: {fileID: 2574296532888433139, guid: d75fc63090cce2f409c475906fe538cd,
         type: 3}
       propertyPath: targetState
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4008493137290382193, guid: d75fc63090cce2f409c475906fe538cd,
         type: 3}
