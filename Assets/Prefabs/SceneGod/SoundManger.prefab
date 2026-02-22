@@ -177,13 +177,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::audioscript
   MusicSource: {fileID: 1976249698034032534}
   effectSource: {fileID: 7729563699423721727}
-  backgroundMusic: {fileID: 8300000, guid: 2409b2680cdee5a488448de6b1f863a6, type: 3}
-  Explosion: {fileID: 8300000, guid: 1c60c7e60fd6bde40b648223473c8f23, type: 3}
-  goblinsilly: {fileID: 8300000, guid: 9ec0562bcbde5d24dbf5fd25eb38986b, type: 3}
+  backgroundMusic: {fileID: 8300000, guid: 6dc19e7904a387841bcd9212a79b0bc3, type: 3}
+  Explosion: {fileID: 8300000, guid: 80b6674b500724447b852a14975feaf4, type: 3}
+  goblinsilly: {fileID: 8300000, guid: 58d10c22df1afed47bd1084509cf8002, type: 3}
   lasershooting: {fileID: 8300000, guid: eb2f27aec1abe1b439bb5e27e6d766d1, type: 3}
-  collecting: {fileID: 0}
+  collecting: {fileID: 8300000, guid: 47b68c9e8c05f834d9381bcebde800e0, type: 3}
   Mechinenoise: {fileID: 8300000, guid: 23b899722e2f2994e900b69e81c6b862, type: 3}
-  Alarmsound: {fileID: 8300000, guid: e5fbef10703a9aa4a84b41df6cff205e, type: 3}
+  Alarmsound: {fileID: 8300000, guid: 84cbdccdf7cb1a44c943b07363822d88, type: 3}
   dooropening: {fileID: 0}
 --- !u!1 &8611975277223352896
 GameObject:
