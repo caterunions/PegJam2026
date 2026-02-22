@@ -12,6 +12,7 @@ public class SceneGod : MonoBehaviour
 
     public enum GameState
     {
+        None,
         Death,
         Game,
         Win,
