@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class AsteroidMovement : MonoBehaviour
 {
-    //audioscript audioManager;
+    audioscript audioManager;
 
     private void Awake()
     {
-        //audioManager = GameObject.FindGameObjectWithTag("audio").GetComponent<audioscript>();
+        audioManager = GameObject.FindGameObjectWithTag("audio").GetComponent<audioscript>();
     }
 
     // This script controls the movement and behavior of an asteroid object in a Unity game. It handles the asteroid's movement, collision with lasers, and spawning of fragments upon destruction.
@@ -64,7 +64,7 @@ public class AsteroidMovement : MonoBehaviour
     {
         if (other.gameObject.CompareTag("laser"))
         {
-            //audioManager.playsfx(audioManager.Explosion);
+            audioManager.playsfx(audioManager.Explosion);
             SpawnFragments();
             Destroy(gameObject);
             Destroy(other.transform.root.gameObject);

@@ -182,9 +182,9 @@ MonoBehaviour:
   goblinsilly: {fileID: 8300000, guid: 9ec0562bcbde5d24dbf5fd25eb38986b, type: 3}
   lasershooting: {fileID: 8300000, guid: eb2f27aec1abe1b439bb5e27e6d766d1, type: 3}
   collecting: {fileID: 0}
-  Mechinenoise: {fileID: 0}
-  Alarmsound: {fileID: 0}
-  swooshing: {fileID: 0}
+  Mechinenoise: {fileID: 8300000, guid: 23b899722e2f2994e900b69e81c6b862, type: 3}
+  Alarmsound: {fileID: 8300000, guid: e5fbef10703a9aa4a84b41df6cff205e, type: 3}
+  swooshing: {fileID: 8300000, guid: 7160e88049a8a574983388b141cdcf46, type: 3}
 --- !u!1 &8611975277223352896
 GameObject:
   m_ObjectHideFlags: 0
