@@ -1849,6 +1849,9 @@ MonoBehaviour:
   requiredTime: 90
   filledProgressBar: {fileID: 1266608246}
   throttle: {fileID: 290793083}
+  fuel: {fileID: 1708226313}
+  mainCam: {fileID: 476680930}
+  skyLight: {fileID: 1248099176}
 --- !u!1 &1549133983
 GameObject:
   m_ObjectHideFlags: 0
