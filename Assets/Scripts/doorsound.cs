@@ -12,6 +12,7 @@ public class doorssound : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        audioManager.playsfx(audioManager.dooropening);
+        //FIXME
+        //audioManager.playsfx(audioManager.dooropening);
     }
 }

@@ -18,15 +18,20 @@ public class audioscript : MonoBehaviour
     public AudioClip dooropening;
 
 
-    private void Start()
+    public void GameStartMusic()
     {
         MusicSource.clip = backgroundMusic;
         MusicSource.Play();
     }
 
-    public void playsfx(AudioClip clip)
+    private void playsfx(AudioClip clip)
     {
         effectSource.PlayOneShot(clip);
+    }
+
+    public void ProcessOreSound()
+    {
+        playsfx(Mechinenoise);
     }
 
 
