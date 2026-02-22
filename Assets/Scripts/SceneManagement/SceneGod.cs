@@ -115,7 +115,7 @@ public class SceneGod : MonoBehaviour
         }
     }
     
-    private void EnterWinState()
+    public void EnterWinState()
     {
         if (_currentState != GameState.Win)
         {

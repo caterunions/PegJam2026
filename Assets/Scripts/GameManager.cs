@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
     private float loseTimer = 0;
 
     private Vector3 camPos;
-    private bool gameEnded;
+    private bool gameEnded = false;
 
     private void OnEnable()
     {
@@ -35,6 +35,12 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        if(currentTime >= requiredTime && !gameEnded)
+        {
+            SceneGod.SInstance.EnterWinState();
+            gameEnded = true;
+        }
+
         if (loseTimer >= 4 && !gameEnded)
         {
             SceneGod.SInstance.IncrementDeaths();
