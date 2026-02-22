@@ -14,6 +14,12 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private float maxSpaceSpeed;
 
+    [SerializeField]
+    private Animator animator;
+
+    [SerializeField]
+    private ParticleSystem jetpackParticles;
+
     private Vector2 lastKnownMoveInput;
 
     private float angle;
@@ -48,20 +54,28 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        animator.SetFloat("Velocity", rb.linearVelocity.magnitude);
+        animator.SetBool("Grounded", _grounded);
+
         if(!canMove)
         {
+            animator.SetBool("Interacting", true);
             rb.linearVelocity = Vector3.zero;
             return;
         }
+
+        animator.SetBool("Interacting", false);
 
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.up);
 
         if (_grounded)
         {
+            jetpackParticles.gameObject.SetActive(false);
             rb.linearVelocity = new Vector3(lastKnownMoveInput.x * groundSpeed, 0, lastKnownMoveInput.y * groundSpeed);
         }
         else
         {
+            jetpackParticles.gameObject.SetActive(true);
             rb.linearVelocity += new Vector3(
                 lastKnownMoveInput.x * spaceAcceleration * Time.deltaTime, 
                 0, 
