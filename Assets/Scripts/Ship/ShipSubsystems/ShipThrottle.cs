@@ -8,6 +8,11 @@ public class ShipThrottle : MonoBehaviour
 
     public event Action<float> OnConsumptionRateChanged;
 
+    private void OnEnable()
+    {
+        UpdateThrottle(0.5f);
+    }
+
     public void Update()
     {
         //TODO later Scale particle effects on engines by curr throttle
