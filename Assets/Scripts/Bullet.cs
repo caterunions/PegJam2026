@@ -10,9 +10,11 @@ public class Bullet : MonoBehaviour
 
     [SerializeField]
     private float speed;
-
+    
+    
     private void OnEnable()
     {
+        
         rb.linearVelocity = transform.right * speed;
     }
 
@@ -25,4 +27,5 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
 }
