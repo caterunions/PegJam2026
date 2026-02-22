@@ -6,7 +6,7 @@ public class audioscript : MonoBehaviour
     [SerializeField] private AudioSource MusicSource;
     [SerializeField] private AudioSource effectSource;
 
-
+    
     [Header("-----AudioClips -----")]
     public AudioClip backgroundMusic;
     public AudioClip Explosion;
@@ -16,18 +16,49 @@ public class audioscript : MonoBehaviour
     public AudioClip Mechinenoise;
     public AudioClip Alarmsound;
     public AudioClip dooropening;
+    public AudioClip Intromusic;
 
 
-    private void Start()
+
+    public void GameStartMusic()
     {
         MusicSource.clip = backgroundMusic;
         MusicSource.Play();
     }
 
-    public void playsfx(AudioClip clip)
+    private void playsfx(AudioClip clip)
     {
         effectSource.PlayOneShot(clip);
     }
 
+    public void ProcessOreSound()
+    {
+        playsfx(Mechinenoise);
+    }
+
+    public void explode()
+    {
+
+    }
+
+    public void gobtime()
+    {
+
+    }
+
+    public void lasershot()
+    {
+
+    }
+
+    public void collect()
+    {
+
+    }
+
+    public void intro()
+    {
+
+    }
 
 }
