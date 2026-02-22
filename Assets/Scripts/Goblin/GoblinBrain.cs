@@ -26,11 +26,11 @@ public class GoblinBrain : MonoBehaviour
 
         if (currentTaskRoutine == null)
         {
-            if (Random.Range(0, 4) == 0)
+            if (Random.Range(0, 5) == 0)
             {
                 currentTaskRoutine = StartCoroutine(MessWithGunTask());
             }
-            else if (Random.Range(0, 4) == 0)
+            else if (Random.Range(0, 5) == 0)
             {
                 currentTaskRoutine = StartCoroutine(MessWithThrottleTask());
             }
@@ -45,7 +45,7 @@ public class GoblinBrain : MonoBehaviour
     {
         agent.SetDestination(transform.position + new Vector3(Random.Range(-10f, 10f), 0, Random.Range(-10f, 10f)));
 
-        yield return new WaitForSeconds(Random.Range(1,3));
+        yield return new WaitForSeconds(Random.Range(1,4));
 
         StopCoroutine(currentTaskRoutine);
         currentTaskRoutine = null;
