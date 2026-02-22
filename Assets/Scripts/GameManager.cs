@@ -1,16 +1,20 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    [SerializeField]
+    private float requiredTime;
 
-    // Update is called once per frame
-    void Update()
+    private float currentTime = 0;
+
+    [SerializeField]
+    private Image filledProgressBar;
+
+    private void Update()
     {
-        
+        currentTime += Time.deltaTime;
+
+        filledProgressBar.fillAmount = currentTime / requiredTime;
     }
 }
