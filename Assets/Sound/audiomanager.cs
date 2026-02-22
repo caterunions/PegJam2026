@@ -22,8 +22,10 @@ public class audioscript : MonoBehaviour
 
     public void GameStartMusic()
     {
+        MusicSource.Stop();
         MusicSource.clip = backgroundMusic;
         MusicSource.Play();
+
     }
 
     private void playsfx(AudioClip clip)
@@ -33,7 +35,9 @@ public class audioscript : MonoBehaviour
 
     public void ProcessOreSound()
     {
+        MusicSource.Stop();
         playsfx(Mechinenoise);
+        MusicSource.Play();
     }
 
     public void explode()
@@ -58,7 +62,7 @@ public class audioscript : MonoBehaviour
 
     public void intro()
     {
-
+        
     }
 
 }

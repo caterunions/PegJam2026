@@ -139,7 +139,7 @@ public class SceneGod : MonoBehaviour
         {
             Debug.LogWarning("Already in Main Menu Scene!");
         }
-        //TODO Zach call audiosystem and then whatever intro music is 
+        //audioSystem.start
     }
     
     public void EnterQuitState()
