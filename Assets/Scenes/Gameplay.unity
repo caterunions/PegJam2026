@@ -1849,6 +1849,9 @@ MonoBehaviour:
   requiredTime: 90
   filledProgressBar: {fileID: 1266608246}
   throttle: {fileID: 290793083}
+  fuel: {fileID: 1708226313}
+  mainCam: {fileID: 476680930}
+  skyLight: {fileID: 1248099176}
 --- !u!1 &1549133983
 GameObject:
   m_ObjectHideFlags: 0
@@ -2418,38 +2421,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8433244220362175462, guid: a93740f921cb13e488ad3881db5913fd,
         type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 2.21
-      objectReference: {fileID: 0}
-    - target: {fileID: 8433244220362175462, guid: a93740f921cb13e488ad3881db5913fd,
-        type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 8433244220362175462, guid: a93740f921cb13e488ad3881db5913fd,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.06495
-      objectReference: {fileID: 0}
-    - target: {fileID: 8433244220362175462, guid: a93740f921cb13e488ad3881db5913fd,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8433244220362175462, guid: a93740f921cb13e488ad3881db5913fd,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8433244220362175462, guid: a93740f921cb13e488ad3881db5913fd,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8433244220362175462, guid: a93740f921cb13e488ad3881db5913fd,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
+      value: -1.59
       objectReference: {fileID: 0}
     - target: {fileID: 8433244220362175462, guid: a93740f921cb13e488ad3881db5913fd,
         type: 3}
