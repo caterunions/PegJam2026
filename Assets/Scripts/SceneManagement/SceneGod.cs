@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneGod : MonoBehaviour
 {
-    [SerializeField] private string deathScene = "DeatjScene";
+    [SerializeField] private string deathScene = "DeathScene";
     [SerializeField] private string gameScene = "Gameplay";
     [SerializeField] private string mainMenuScene = "MainMenuScene";
     [SerializeField] private string winMenuScene = "WinScene";

@@ -426,11 +426,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: SceneGod
       objectReference: {fileID: 0}
-    - target: {fileID: 3973187884169182029, guid: 7c4f3dc57dfa2ff4788dba2945253488,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7795153893810522357, guid: 7c4f3dc57dfa2ff4788dba2945253488,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -482,38 +477,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 3973187884169182029, guid: 7c4f3dc57dfa2ff4788dba2945253488, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 996952905130124297, guid: 7c4f3dc57dfa2ff4788dba2945253488,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1436330914}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c4f3dc57dfa2ff4788dba2945253488, type: 3}
---- !u!1 &1436330912 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 996952905130124297, guid: 7c4f3dc57dfa2ff4788dba2945253488,
-    type: 3}
-  m_PrefabInstance: {fileID: 1151291021}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1436330914
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1436330912}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf27315ed3c555645930dc4a9e837c9e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SceneGod
-  deathScene: DeathScene
-  gameScene: Gameplay
-  mainMenuScene: MainMenuScene
-  audioSystem: {fileID: 0}
-  player: {fileID: 0}
 --- !u!1 &1556426926
 GameObject:
   m_ObjectHideFlags: 0
